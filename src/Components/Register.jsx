@@ -16,7 +16,7 @@ function Register() {
   }
 
   return (
-    <div className="RegisterContainer">
+    <div className="Container">
       <div className="imgContainer">
         <RandomImage />
       </div>
@@ -28,13 +28,15 @@ function Register() {
           <input placeholder="Email" type="email"></input>
           <input placeholder="Password" type="password"></input>
           <input type="file" style={{ display: "none" }} id="file"></input>
-          <label htmlFor="file" className="adding">
+          <label htmlFor="file">
             <img src={add} alt=""></img>
             <p>Add an avatar</p>
           </label>
           <button>Sign Up</button>
         </form>
-        <p>You do not have an account? Login</p>
+        <p>
+          You do have an account?<span>Login</span>
+        </p>
       </div>
     </div>
   );

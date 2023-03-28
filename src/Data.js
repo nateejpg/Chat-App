@@ -6,7 +6,7 @@ const Data = {
       },
       {
         id: 2,
-        url: "https://images.nightcafe.studio/jobs/aT9pR5l3WQrRPR5iyDVl/aT9pR5l3WQrRPR5iyDVl--1--E0VGH_11.3636x.jpg?tr=w-1600,c-at_max",
+        url: "https://storage.googleapis.com/dream-machines-output/4f9a8711-f510-4bb5-bfc4-f059ab17e170/0_0.png",
       },
       {
         id: 3,
@@ -23,6 +23,14 @@ const Data = {
       {
         id: 6,
         url: "https://kawaiiai.com/wp-content/uploads/2022/09/surreal-portrait-ai-art-4.jpg",
+      },
+      {
+        id: 7,
+        url: "https://kawaiiai.com/wp-content/uploads/2022/09/surreal-portrait-ai-art-5.jpg",
+      },
+      {
+        id: 8,
+        url: "https://storage.googleapis.com/dream-machines-output/1f30da78-a676-4d1f-b9a8-0be803b9dfeb/0_0.png",
       },
     ],
   }

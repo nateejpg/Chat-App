@@ -5,7 +5,7 @@
   font-family: sans-serif;
 }
 
-.RegisterContainer {
+.Container {
   display: flex;
   width: 100%;
   height: 100vh;
@@ -97,13 +97,14 @@ input[type="file"] {
   border: none;
   outline: none;
   cursor: pointer;
+  margin: 20px;
 }
 
 .formContainer button:hover {
   background-color: gray;
 }
 
-.formContainer p {
+.formContainer p span {
   padding: 15px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
