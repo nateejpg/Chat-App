@@ -1,11 +1,12 @@
 import '../src/style.scss';
-import Register from './Components/Register';
-import Login from './Components/Login';
+import Register from './Pages/Register';
+import Login from './Pages/Login';
+import  Home  from './Pages/Home';
 
 function App() {
   return (
     <div>
-      <Login/>
+      <Register/>
     </div>
   );
 }
