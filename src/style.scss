@@ -270,6 +270,56 @@ input[type="file"] {
 
     .messages {
       background-color: #323236;
+      padding: 10px;
+      height: calc(100% - 150px);
+    }
+
+    .input {
+      display: flex;
+      height: 90px;
+      padding: 10px;
+      background-color: #8a8787;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: #000;
+    }
+
+    input {
+      outline: none;
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      width: 100%;
+    }
+
+    & ::placeholder {
+      color: #000;
+    }
+
+    .send {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+
+      button {
+        padding: 10px 20px;
+        border: 1px solid var(--secondary-Color);
+        outline: none;
+        cursor: pointer;
+        border-radius: 5px;
+        color: #fff;
+        background-color: var(--secondary-Color);
+      }
     }
   }
 }
