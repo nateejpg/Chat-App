@@ -15,7 +15,7 @@ function Login() {
   }
 
   return (
-    <div className="Container">
+    <div className="WelcomeContainer">
       <div className="imgContainer">
         <RandomImage />
       </div>

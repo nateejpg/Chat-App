@@ -1,3 +1,8 @@
+:root {
+  --primary-Color: #161616;
+  --secondary-Color: #1f1f1f;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -5,13 +10,12 @@
   font-family: sans-serif;
 }
 
-.AdressContainer {
+.WelcomeContainer {
   display: flex;
   width: 100%;
   height: 100vh;
   padding: 25px;
-  background-color: #000000;
-  background-image: linear-gradient(147deg, #000000 0%, #201f1f 74%);
+  background-color: var(--primary-Color);
 }
 .imgContainer {
   position: relative;
@@ -115,7 +119,7 @@ input[type="file"] {
 }
 
 .home {
-  background-color: #201f1f;
+  background-color: var(--primary-Color);
   height: 100vh;
   display: flex;
   text-align: center;
@@ -124,8 +128,148 @@ input[type="file"] {
   color: #fff;
 }
 
-.home .cntainer {
+.container {
+  display: flex;
   border: 1px solid #fff;
-  width: 65%;
-  height: 80%;
+  width: 80%;
+  height: 90%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  .sidebar {
+    border-right: 1px solid var(--primary-Color);
+    background-color: rgb(27, 26, 26);
+    flex: 1;
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      background-color: var(--secondary-Color);
+      height: 100px;
+      padding: 10px;
+      justify-content: space-between;
+      font-size: 1.5rem;
+
+      .logo {
+        font-weight: bold;
+      }
+      .user {
+        display: flex;
+        gap: 10px;
+      }
+
+      img {
+        background-color: var(--primary-Color);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      button {
+        background-color: gray;
+        color: #fff;
+        font-size: 15px;
+        padding: 3px;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        border: none;
+        outline: none;
+      }
+
+      button:hover {
+        background-color: #2f2d52;
+      }
+    }
+
+    .search {
+      border-bottom: 1px solid gray;
+
+      .searchForm {
+        input {
+          display: flex;
+          background-color: transparent;
+          height: 25px;
+          max-width: 50%;
+          margin: 10px;
+          font-size: 1rem;
+          color: #fff;
+          border: none;
+          outline: none;
+          text-align: left;
+
+          &::placeholder {
+            color: gray;
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+    .userChat {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 20px;
+      margin-left: 5px;
+
+      &:hover {
+        background-color: #2f2d52;
+      }
+
+      img {
+        height: 80px;
+        width: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .userChatInfo {
+        span {
+          font-size: 18px;
+          font-weight: 500;
+        }
+        p {
+          font-size: 14px;
+          color: lightgray;
+        }
+      }
+    }
+  }
+  .chat {
+    flex: 2;
+
+    .chatInfo {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      background-color: #1e1d22;
+      align-items: center;
+      padding: 10px;
+
+      span {
+        font-size: 1.3rem;
+      }
+
+      .chatIcons {
+        display: flex;
+        gap: 10px;
+
+        img {
+          width: 30px;
+          height: 30px;
+          filter: invert(1);
+          cursor: pointer;
+        }
+      }
+    }
+
+    .messages {
+      background-color: #323236;
+    }
+  }
 }

@@ -5,8 +5,10 @@ import Chat from "../components/Chat";
 const Home = () => {
   return (
     <div className="home">
-      <Sidebar />
-      <Chat />
+      <div className="container">
+        <Sidebar />
+        <Chat />
+      </div>
     </div>
   );
 };

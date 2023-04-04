@@ -16,7 +16,7 @@ function Register() {
   }
 
   return (
-    <div className="AdressContainer">
+    <div className="WelcomeContainer">
       <div className="imgContainer">
         <RandomImage />
       </div>
