@@ -4,6 +4,7 @@ import plus from "../images/plus.png";
 import camera from "../images/camera.png";
 import Messages from "./Messages";
 import Input from "./Input";
+import { getStorage, ref } from "firebase/storage";
 
 function Chat() {
   return (
@@ -23,3 +24,4 @@ function Chat() {
 }
 
 export default Chat;
+export const storage = getStorage();

@@ -7,6 +7,12 @@ import {
   updateProfile,
 } from "firebase/auth";
 import app from "../firebase";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage";
 
 function RandomImage() {
   const [url, setUrl] = useState("");
@@ -48,6 +54,49 @@ function Register() {
         const errorCode = error.code;
         alert(errorCode);
       });
+
+    const storage = getStorage();
+
+    /** @type {any} */
+    const metadata = {
+      contentType: "image/jpeg",
+    };
+
+    const storageRef = ref(storage, "images/" + file.name);
+    const uploadTask = uploadBytesResumable(storageRef, file, metadata);
+
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + progress + "% done");
+        switch (snapshot.state) {
+          case "paused":
+            console.log("Upload is paused");
+            break;
+          case "running":
+            console.log("Upload is running");
+            break;
+        }
+      },
+      (error) => {
+        switch (error.code) {
+          case "storage/unauthorized":
+            break;
+          case "storage/canceled":
+            break;
+
+          case "storage/unknown":
+            break;
+        }
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          console.log("File available at", downloadURL);
+        });
+      }
+    );
   };
 
   return (
@@ -78,7 +127,7 @@ function Register() {
             type="file"
             style={{ display: "none" }}
             id="file"
-            onChange={(e) => setFile(e.target.value)}
+            onChange={(e) => setFile(e.target.files[0])}
           ></input>
           <label htmlFor="file">
             <img src={add} alt=""></img>
